@@ -2,6 +2,8 @@
 import {Directive, ElementRef, Input} from '@angular/core';
 // import {MathJax} from '@types/mathjax';
 import katex from 'katex';
+//import { contrib } from "../../node_modules/katex/dist/contrib/auto-renderer.min.js";
+
  // import * from '@types/katex';
 //import katex ;
 
@@ -13,17 +15,26 @@ export class KatexDirective {
     constructor(private el: ElementRef) {
     }
     ngOnChanges() {
+      //console.log(contrib);
       console.log('>> ngOnChanges');
-      //let MathJax : any;
+      let input = this.KatexInput.replace('`','').replace('`','').replace('$','').replace('$','').replace('$','').replace('$','').replace('/\\/g','\\\\').replace('`','').replace('/\\/g','\\\\');
         //this.el.nativeElement.style.backgroundColor = 'yellow';
-      katex.render(this.KatexInput,this.el.nativeElement);
-      // this.el.nativeElement.innerHTML = this.KatexInput;
+        console.log('input');
+        console.log(input);
+      katex.render(input,this.el.nativeElement);
+      /*
+      // old angluar: doas auto-render
+      // https://github.com/tfoxy/angular-katex/blob/master/angular-katex.js
+      this.el.nativeElement.innerHTML = this.KatexInput;
+      katex.renderMathInElement(
+        this.el.nativeElement,
+        [
+          {left: "$$", right: "$$", display: true},
+          {left: "\\[", right: "\\]", display: true},
+          {left: "\\(", right: "\\)", display: false}
+        ]
+        );*/
       console.log(this.KatexInput);
       //katex.render("c = \\pm\\sqrt{a^2 + b^2}", this.el.nativeElement);
-      // using eval to prevent premature errors (load order) 
-      // eval('MathJax.Hub.Queue(["Typeset",MathJax.Hub, this.el.nativeElement])');
-      // eval('MathJax.Hub.Queue(["Typeset",MathJax.Hub, this.el.nativeElement])');
-
-
     }
 }

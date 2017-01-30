@@ -11,9 +11,14 @@
   <link rel="manifest" href="manifest.json">
   <!-- todo: link from node  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
-  
+  <!-- <link rel="stylesheet" href="../node_modules/katex/dist/katex.min.css" > -->
+  <!-- inline rendering for katex -->
+  <!-- @see: https://github.com/Khan/KaTeX/blob/master/contrib/auto-render/README.md -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+
+
   <meta name="theme-color" content="#4e8ef7">
-  
+
   <!-- cordova.js required for cordova apps -->
   <script src="cordova.js"></script>
 
@@ -40,26 +45,35 @@
          },
          jax: [
            'input/TeX',
-           'output/SVG',
            'output/HTML-CSS'
          ],
+         SVG: {
+          scale: 100
+         },
          tex2jax: {
-           inlineMath: [['$','$'],['\\(','\\)']],
+           inlineMath: [['$','$']],
            displayMath: [['$$','$$']],
            processEscapes: false,
            processRefs: false,
            processEnvironments: true
          },
-         
+
       });
     </script>
     <!--<script src="../node_modules/mathjax/"></script>-->
     <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/config/TeX-AMS-MML_SVG-full.js"></script>-->
     <!--<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML-AM_SVG"></script>-->
-    <!--
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full">
+
+    <!--<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML-full">
     </script>
-    -->
+../MathJax.js?config=TeX-AMS-MML_HTMLorMML
+  -->
+    <!--<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML">
+    </script>-->
+    <!--http://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-->
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
 <!--<script type="text/javascript" src="assets/js/mathjax.min.js">
     </script>-->
   <link href="build/main.css" rel="stylesheet">
