@@ -23,6 +23,7 @@ export class KatexDirective {
         console.log(input);
       katex.render(input,this.el.nativeElement);
       /*
+      http://stackoverflow.com/questions/38181548/render-math-in-node-js-template-with-katex?rq=1
       // old angluar: doas auto-render
       // https://github.com/tfoxy/angular-katex/blob/master/angular-katex.js
       this.el.nativeElement.innerHTML = this.KatexInput;
@@ -34,7 +35,7 @@ export class KatexDirective {
           {left: "\\(", right: "\\)", display: false}
         ]
         );*/
-      console.log(this.KatexInput);
+      //console.log(this.KatexInput);
       //katex.render("c = \\pm\\sqrt{a^2 + b^2}", this.el.nativeElement);
     }
 }
