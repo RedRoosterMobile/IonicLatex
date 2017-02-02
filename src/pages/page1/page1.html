@@ -13,13 +13,27 @@
   <p>
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
   </p>
-  <h1>Hallo Sofatutor</h1>
-  <div>
-    Mathjax whaterver
-  </div>
+  <h1>Hello Math Lover, come on in!</h1>
 
   <button ion-button secondary menuToggle>Toggle Menu</button>
 
+
+  <br>
+  <br>
+  <h1>Katex</h1>
+  <p>good in katex</p>
+  <div [Katex]="formulae"></div>
+  <br>
+  <div [Katex]="laplace"></div>
+  <br>
+  <div [Katex]="sinat"></div>
+  <br>
+  <div [Katex]="sqrtt"></div>
+  <br>
+  <div [Katex]="cdot"></div>
+  <br>
+  <div [Katex]="largeeMj"></div>
+  
   <br>
   <br>
 
@@ -35,53 +49,7 @@
   <br>
   <div [MathJax]="cdot">{{cdot}}</div>
   <br>
-  <!--<div [MathJax]="largee">{{largee}}</div>-->
   <div [MathJax]="largeeMj">{{largeeMj}}</div>
 
-  <br>
-  <br>
-  <h1>Katex</h1>
-  <div [Katex]="formulae"></div>
-  <br>
-  <div [Katex]="laplace"></div>
-  <br>
-  <div [Katex]="sinat"></div>
-  <br>
-  <div [Katex]="sqrtt"></div>
-  <br>
-  <br>
-  <div id="katex_in_element" class="katex_in_element">{{cdot}}</div>
-  <div id="test">
-      
-      <span class="blue">
-        Other node $$ \int_2^3 $$
-      </span>
-      <span>
-        bla blub {{ largeeMj }}
-        {{ cdot }}
-      </span>
-      <span>{{cdot}}</span>
-      <pre>
-        Stuff in a $pre tag$
-      </pre>
-  </div>
-  <!--<div [Katex]="largee"></div>-->
-  <br>
-  <!--<div [Katex]="largeeMj"></div>-->
-
-  <!--
-
-    renderMathInElement(
-          document.getElementById("test"),
-          {
-              delimiters: [
-                  {left: "$$", right: "$$", display: true},
-                  {left: "\\[", right: "\\]", display: true},
-                  {left: "$", right: "$", display: false},
-                  {left: "\\(", right: "\\)", display: false}
-              ]
-          }
-      );
-  -->
 
 </ion-content>
