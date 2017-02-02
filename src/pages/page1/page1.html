@@ -49,7 +49,39 @@
   <br>
   <div [Katex]="sqrtt"></div>
   <br>
+  <br>
+  <div id="katex_in_element" class="katex_in_element">{{cdot}}</div>
+  <div id="test">
+      
+      <span class="blue">
+        Other node $$ \int_2^3 $$
+      </span>
+      <span>
+        bla blub {{ largeeMj }}
+        {{ cdot }}
+      </span>
+      <span>{{cdot}}</span>
+      <pre>
+        Stuff in a $pre tag$
+      </pre>
+  </div>
   <!--<div [Katex]="largee"></div>-->
   <br>
   <!--<div [Katex]="largeeMj"></div>-->
+
+  <!--
+
+    renderMathInElement(
+          document.getElementById("test"),
+          {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: false},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+          }
+      );
+  -->
+
 </ion-content>

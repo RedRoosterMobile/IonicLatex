@@ -13,6 +13,9 @@ import katex from 'katex';
 export class KatexDirective {
     @Input('Katex') KatexInput: string;
     constructor(private el: ElementRef) {
+      // HACK to get renderMathInElement working
+      if (!window['katex'])
+        window['katex'] = katex
     }
     ngOnChanges() {
       //console.log(contrib);
