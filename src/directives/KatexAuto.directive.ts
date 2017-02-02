@@ -11,7 +11,6 @@ import katex from 'katex';
 export class KatexAutoDirective {
     @Input('KatexAuto') KatexInput: string;
 
-
     // TODO roll your own auto-renderer
 
     inlineOptions : any;
@@ -22,6 +21,9 @@ export class KatexAutoDirective {
         delimiters: [
           {left: "$$", right: "$$", display: true},
           {left: "$", right: "$", display: false}
+        ],
+        ignoredTags: [
+            "script", "noscript", "style", "textarea", "pre", "code",
         ]
       };
     }
@@ -33,11 +35,11 @@ export class KatexAutoDirective {
     }
 }
 
-/*
+
 // TODO: make this typescript ready
 
 let splitWithDelimiters = function(text, delimiters) {
-    let data = [{type: "text", data: text}];
+    let data = [{type: "text", data: text,display: null, rawData: null}];
     for (let i = 0; i < delimiters.length; i++) {
         let delimiter = delimiters[i];
         data = splitAtDelimiters(
@@ -116,28 +118,10 @@ let defaultOptions = {
     ],
 };
 
-let extend = function(obj:any) {
-    // Adapted from underscore.js' `_.extend`. See LICENSE.txt for license.
-    let source;
-    let prop;
-    let length = arguments.length;
-    for (let i = 1; i < length; i++) {
-        source = arguments[i];
-        for (prop in source) {
-            if (Object.prototype.hasOwnProperty.call(source, prop)) {
-                obj[prop] = source[prop];
-            }
-        }
-    }
-    return obj;
-};
-
 let renderMathInElement = function(elem, options) {
     if (!elem) {
         throw new Error("No element provided to render");
     }
-
-    options = extend({}, defaultOptions, options);
 
     renderElem(elem, options.delimiters, options.ignoredTags);
 };
@@ -242,4 +226,3 @@ let splitAtDelimiters = function(startData, leftDelim, rightDelim, display) {
 
     return finalData;
 };
-*/
