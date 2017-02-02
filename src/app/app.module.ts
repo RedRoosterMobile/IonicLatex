@@ -5,6 +5,7 @@ import { Page1 } from '../pages/page1/page1';
 import { Page2 } from '../pages/page2/page2';
 import { MathJaxDirective } from '../directives/MathJax.directive';
 import { KatexDirective } from '../directives/Katex.directive';
+import { KatexAutoDirective } from '../directives/KatexAuto.directive';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { KatexDirective } from '../directives/Katex.directive';
     Page1,
     Page2,
     MathJaxDirective,
-    KatexDirective
+    KatexDirective,
+    KatexAutoDirective
   ],
   imports: [
     IonicModule.forRoot(MyApp)
