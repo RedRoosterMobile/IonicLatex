@@ -1,5 +1,6 @@
 import {Directive, ElementRef, Input} from '@angular/core';
 import katex from 'katex';
+// import renderMathInElement from 'katex/contrib';
 // dunno..
 // import { renderMathInElement } from 'auto-renderer';
 // import { renderMathInElement } from "../../node_modules/katex/dist/contrib/auto-renderer.min.js";
